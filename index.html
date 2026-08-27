@@ -244,9 +244,8 @@
 
       .logo {
         position: absolute;
-        left: -8%;
-        bottom: -12%;
         width: 42%;
+        height: auto;
         opacity: 0.48;
         animation: drift 18s linear infinite;
       }
@@ -259,12 +258,15 @@
         animation-delay: -12s;
       }
 
+      /* left/top % is relative to the ticket area, so they travel across it */
       @keyframes drift {
         from {
-          transform: translate(0, 0);
+          left: -18%;
+          top: 88%;
         }
         to {
-          transform: translate(78%, -118%);
+          left: 68%;
+          top: -28%;
         }
       }
 
