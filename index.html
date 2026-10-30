@@ -11,8 +11,8 @@
         --yellow-bottom: #ffc43a;
         --blue-top: #3c9ee1;
         --blue-bottom: #0070cd;
-        --green-top: #5cff6e;
-        --green-bottom: #26d94a;
+        --green-top: #334EFF;
+        --green-bottom: #334EFF;
       }
 
       * {
@@ -193,7 +193,7 @@
       }
 
       .metro {
-        height: 100px;
+        height: 136px;
       }
 
       .metro-text {
@@ -283,8 +283,13 @@
       }
 
       .expiration {
-        height: calc(180px + env(safe-area-inset-bottom));
+        height: calc(144px + env(safe-area-inset-bottom));
         padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      .expiration .yellow-top,
+      .expiration .yellow-bottom {
+        background: #AB2525;
       }
 
       .exp-time {
@@ -346,7 +351,6 @@
           <div class="fare">ADULT ($3.00)</div>
         </button>
 
-        <div class="divider"></div>
         <div class="band expiration">
           <div class="band-top yellow-top"></div>
           <div class="band-bottom yellow-bottom"></div>
@@ -377,8 +381,8 @@
       }
 
       document.getElementById("openTicket").addEventListener("click", function () {
-        // Expiration = now + 2.5 hours when the ticket is opened
-        const expiresAt = new Date(Date.now() + 2.5 * 60 * 60 * 1000);
+        // Expiration = now + 2 hours when the ticket is opened
+        const expiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000);
         expirationTime.textContent = formatExpiration(expiresAt);
         ticketArea.classList.remove("green");
         ticketArea.classList.add("blue");
